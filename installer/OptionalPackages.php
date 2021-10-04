@@ -174,7 +174,9 @@ class OptionalPackages
     {
         $directory = $this->config['directory'];
         foreach ($directory as $dir) {
-            @mkdir(__DIR__.'/../src/'. $dir);
+            if (!mkdir($concurrentDirectory = __DIR__ . '/../src/' . $dir) && !is_dir($concurrentDirectory)) {
+                throw new \RuntimeException(sprintf('Directory "%s" was not created', $concurrentDirectory));
+            }
         }
     }
 
@@ -375,8 +377,8 @@ class OptionalPackages
             return;
         }
         $destinationPath = dirname($this->projectRoot . $target);
-        if (! is_dir($destinationPath)) {
-            mkdir($destinationPath, 0775, true);
+        if (!is_dir($destinationPath) && !mkdir($destinationPath, 0775, true) && !is_dir($destinationPath)) {
+            throw new \RuntimeException(sprintf('Directory "%s" was not created', $destinationPath));
         }
         $this->io->write(sprintf('  - 复制中 <info>%s</info>', $target));
         copy($this->installerSource . $resource, $this->projectRoot . $target);

@@ -5,7 +5,7 @@
   "keywords": [
     "php"
   ],
-  "description": "Plugin Creater.",
+  "description": "Hyperf Plugin Creater.",
   "autoload": {
     "psr-4": {
       "Installer\\": "installer/"

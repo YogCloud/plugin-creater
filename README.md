@@ -42,4 +42,4 @@ plugin/yogcloud/demo/
 ```
 
 ## 感谢：
-本工具根据 mochat/plugin-creater 大量代码 Copy 而来，再次感谢。
+本工具根据 `mochat/plugin-creater` 大量代码 Copy 而来，再次感谢。
