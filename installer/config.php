@@ -10,7 +10,6 @@ return [
     'questions' => [
     ],
     'directory' => [
-        'Request', 'Exception', 'Contract', 'Controller', 'Job', 'Listener', 'Logic', 'Model',
-        'Queue', 'Service', 'Task',
+        'Request', 'Exception', 'Constants', 'Controller', 'Job', 'Listener', 'Logic', 'Model','Service', 'Task', 'Interface'
     ],
 ];
